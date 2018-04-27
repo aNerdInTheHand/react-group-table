@@ -1,6 +1,5 @@
 import {
   bool,
-  oneOfType,
   number,
   string
 } from 'prop-types'

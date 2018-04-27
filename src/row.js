@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import propTypes, { defaultProps } from './propTypes/groupTable'
+import propTypes, { defaultProps } from './propTypes/row'
 
 export default class Row extends Component {
   getGamesPlayed () {
