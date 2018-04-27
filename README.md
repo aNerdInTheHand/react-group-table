@@ -1,2 +1,2 @@
-# react-group-table
-A react component for displaying football (soccer) group tables
+# cm-scoreboard
+Copa Mundial Football Scoreboard

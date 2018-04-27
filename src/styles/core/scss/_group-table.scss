@@ -1,0 +1,72 @@
+@import './fonts';
+
+.table-wrapper {
+  background: white;
+  display: inline-block;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+
+.group-table {
+  align-items: center;
+  background-color: #f3f3f3;
+  border: 1px solid black;
+  border-radius: 3px;
+  font-family: $detail-font, sans-serif;
+  margin: 1rem;
+  max-width: 750px;
+  padding: 1.5rem;
+}
+
+th, td {
+  max-width: 100px;
+  min-width: 20px;
+  padding: 0.5rem;
+  text-align: right;
+}
+
+th {
+  border-bottom: 2px solid #a0a0a0;
+}
+
+tr {
+  border: 1px solid #c0c0c0;
+}
+
+.td-em, .th-em {
+  font-weight: bolder;
+}
+
+.group-table-team-name {
+  text-align: left;
+}
+
+.group-table-header-row {
+  background-color: #ffeeee;
+}
+
+.group-qualifying-position {
+  background-color: #4cc3554d; /* rgba(192, 222, 197, .3); */
+}
+
+.qual-pos {
+  background-color: #4cc35580; /* rgba(192, 222, 197, .7); */
+}
+
+.group-no-qualifying-position {
+  background-color: rgba(250, 122, 85, .3);
+}
+
+.no-qual-pos {
+  background-color: rgba(250, 122, 85, .5);
+}
+
+.last-qualifying-pos {
+  border-bottom: 2px dashed #c0c0c0;
+}
+
+table {
+  border-collapse: collapse;
+}
