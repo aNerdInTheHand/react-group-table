@@ -14,7 +14,7 @@
   background-color: #f3f3f3;
   border: 1px solid black;
   border-radius: 3px;
-  font-family: $detail-font, sans-serif;
+  font-family: $detail-font-light, sans-serif;
   margin: 1rem;
   max-width: 750px;
   padding: 1.5rem;
@@ -36,7 +36,7 @@ tr {
 }
 
 .td-em, .th-em {
-  font-weight: bolder;
+  font-family: $detail-font-bold;
 }
 
 .group-table-team-name {

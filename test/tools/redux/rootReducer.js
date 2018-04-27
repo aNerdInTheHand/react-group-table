@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
 
-import template from './template/reducer'
+import group from './group/reducer'
 
 const reducers = {
-  template
+  group
 }
 
 export default combineReducers(reducers)

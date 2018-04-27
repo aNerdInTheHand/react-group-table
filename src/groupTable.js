@@ -30,8 +30,8 @@ export default class GroupTable extends Component {
               <td>0</td>
               <td>2</td>
               <td>4</td>
-              <td>7</td>
-              <td className='th-em'>2</td>
+              <td>2</td>
+              <td className='th-em'>7</td>
             </tr>
             <tr className='group-table-content-row group-qualifying-position last-qualifying-pos'>
               <td className='qual-pos'>2</td>
