@@ -1,0 +1,26 @@
+{
+  "name": "react-group-table",
+  "version": "1.0.0",
+  "description": "A react component for displaying football group tables",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aNerdInTheHand/react-group-table.git"
+  },
+  "keywords": [
+    "react",
+    "football",
+    "soccer",
+    "es6",
+    "javascript"
+  ],
+  "author": "Nick Holvast",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aNerdInTheHand/react-group-table/issues"
+  },
+  "homepage": "https://github.com/aNerdInTheHand/react-group-table#readme"
+}
