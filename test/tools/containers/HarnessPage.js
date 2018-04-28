@@ -11,7 +11,7 @@ export class HarnessPage extends Component {
       <div>
         <Harness {...this.props} />
         <div style={breakStyle} />
-        <Harness {...this.props} />
+        <Harness {...this.props} groupName='Group H' />
       </div>
     )
   }

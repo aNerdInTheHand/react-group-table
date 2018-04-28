@@ -26,10 +26,25 @@ export default class Row extends Component {
         : 0
   }
 
+  getPositionClass () {
+    return this.props.qualificationPosition
+      ? 'qualifying'
+      : this.props.dangerZone
+        ? 'danger'
+        : ''
+  }
+
+  inCutOffPosition () {
+    return this.props.cutOffPosition
+      ? 'group-cutoff-position'
+      : ''
+  }
+
   render () {
     return (
-      <tr className='group-table-content-row group-qualifying-position'>
-        {this.props.showPositions && <td className='qual-pos'>{this.props.teamPosition}</td>}
+      <tr className={`group-table-content-row group-tr-${this.getPositionClass()}-position ${this.inCutOffPosition()}`}>
+        {this.props.showPositions &&
+          <td className={`group-td-${this.getPositionClass()}-position`}>{this.props.teamPosition}</td>}
         <td className='td-em group-table-team-name'>{this.props.teamName}</td>
         <td>{this.getGamesPlayed()}</td>
         <td>{this.props.gamesWon}</td>

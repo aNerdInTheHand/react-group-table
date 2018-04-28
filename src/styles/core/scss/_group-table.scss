@@ -39,32 +39,12 @@ tr {
   font-family: $detail-font-bold;
 }
 
-.group-table-team-name {
+.group-table-team-name, .group-table-group-name {
   text-align: left;
 }
 
 .group-table-header-row {
   background-color: #ffeeee;
-}
-
-.group-qualifying-position {
-  background-color: #4cc3554d; /* rgba(192, 222, 197, .3); */
-}
-
-.qual-pos {
-  background-color: #4cc35580; /* rgba(192, 222, 197, .7); */
-}
-
-.group-no-qualifying-position {
-  background-color: rgba(250, 122, 85, .3);
-}
-
-.no-qual-pos {
-  background-color: rgba(250, 122, 85, .5);
-}
-
-.last-qualifying-pos {
-  border-bottom: 2px dashed #c0c0c0;
 }
 
 table {

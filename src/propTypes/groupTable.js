@@ -15,6 +15,7 @@ export const defaultProps = {
 export default {
   cutOffPositions: arrayOf(number),
   dangerZonePositions: arrayOf(number),
+  groupName: string,
   qualificationPositions: arrayOf(number),
   pointsForWin: number,
   teams: arrayOf(
