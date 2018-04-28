@@ -1,7 +1,41 @@
 import React, { Component } from 'react'
 import propTypes, { defaultProps } from './propTypes/groupTable'
+import Row from './row'
 
 export default class GroupTable extends Component {
+  isTeamInCutoffPosition (position) {
+    return this.props.cutOffPositions.includes(position)
+  }
+
+  isTeamInDangerZone (position) {
+    return this.props.dangerZonePositions.includes(position)
+  }
+
+  isTeamInQualPosition (position) {
+    return this.props.qualificationPositions.includes(position)
+  }
+
+  renderTeams () {
+    return this.props.teams.map((team, i) => {
+      return <Row
+        cutOffPosition={this.isTeamInCutoffPosition(i + 1)}
+        dangerZone={this.isTeamInDangerZone(i + 1)}
+        key={i}
+        gamesDrawn={team.gamesDrawn}
+        gamesLost={team.gamesLost}
+        gamesPlayed={team.gamesPlayed}
+        gamesWon={team.gamesWon}
+        goalDifference={team.goalDifference}
+        goalsConceded={team.goalsConceded}
+        goalsScored={team.goalsScored}
+        points={team.points}
+        qualificationPosition={this.isTeamInQualPosition(i + 1)}
+        teamName={team.teamName}
+        teamPosition={i + 1}
+      />
+    })
+  }
+
   render () {
     return (
       <div className='table-wrapper'>
@@ -9,7 +43,7 @@ export default class GroupTable extends Component {
           <thead>
             <tr className='group-table-header-row'>
               <th className='empty-th' />
-              <th className='empty-th' />
+              <th className='group-table-group-name'>{this.props.groupName}</th>
               <th>P</th>
               <th>W</th>
               <th>D</th>
@@ -21,54 +55,7 @@ export default class GroupTable extends Component {
             </tr>
           </thead>
           <tbody>
-            <tr className='group-table-content-row group-qualifying-position'>
-              <td className='qual-pos'>1</td>
-              <td className='td-em group-table-team-name'>Romania</td>
-              <td>3</td>
-              <td>2</td>
-              <td>1</td>
-              <td>0</td>
-              <td>2</td>
-              <td>4</td>
-              <td>7</td>
-              <td className='th-em'>2</td>
-            </tr>
-            <tr className='group-table-content-row group-qualifying-position last-qualifying-pos'>
-              <td className='qual-pos'>2</td>
-              <td className='td-em group-table-team-name'>England</td>
-              <td>3</td>
-              <td>2</td>
-              <td>0</td>
-              <td>1</td>
-              <td>3</td>
-              <td>5</td>
-              <td>2</td>
-              <td className='th-em'>2</td>
-            </tr>
-            <tr className='group-table-content-row group-no-qualifying-position'>
-              <td className='no-qual-pos'>3</td>
-              <td className='td-em group-table-team-name'>Colombia</td>
-              <td>3</td>
-              <td>1</td>
-              <td>0</td>
-              <td>2</td>
-              <td>-2</td>
-              <td>1</td>
-              <td>3</td>
-              <td className='th-em'>3</td>
-            </tr>
-            <tr className='group-table-content-row group-no-qualifying-position'>
-              <td className='no-qual-pos'>4</td>
-              <td className='td-em group-table-team-name'>Tunisia</td>
-              <td>3</td>
-              <td>0</td>
-              <td>1</td>
-              <td>2</td>
-              <td>-3</td>
-              <td>1</td>
-              <td>4</td>
-              <td className='th-em'>1</td>
-            </tr>
+            {this.renderTeams()}
           </tbody>
         </table>
       </div>

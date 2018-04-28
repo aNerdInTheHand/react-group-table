@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 
 import Harness from '../components/Harness.js'
 
-import { increment } from '../redux/template/actions'
 const breakStyle = { height: '50px', backgroundColor: '#c0c0c0' }
 
 export class HarnessPage extends Component {
@@ -12,7 +11,7 @@ export class HarnessPage extends Component {
       <div>
         <Harness {...this.props} />
         <div style={breakStyle} />
-        <Harness {...this.props} />
+        <Harness {...this.props} groupName='Group H' />
       </div>
     )
   }
@@ -20,14 +19,8 @@ export class HarnessPage extends Component {
 
 function mapStateToProps (state) {
   return {
-    template: state.template
+    teams: state.group.teams
   }
 }
 
-function mapDispatchToProps (dispatch) {
-  return {
-    onButtonClick: () => dispatch(increment())
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(HarnessPage)
+export default connect(mapStateToProps, null)(HarnessPage)

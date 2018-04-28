@@ -1,26 +1,34 @@
 import {
-  bool,
-  func,
-  oneOfType,
+  arrayOf,
   number,
+  shape,
   string
 } from 'prop-types'
 
 export const defaultProps = {
-  minutes: 0,
-  seconds: 0,
-  showCentrePanel: false,
-  showSeconds: true
+  cutOffPositions: [2],
+  dangerZonePositions: [3, 4],
+  pointsForWin: 3,
+  qualificationPositions: [1, 2]
 }
 
 export default {
-  awayTeam: string.isRequired,
-  homeTeam: string.isRequired,
-  minutes: number,
-  onButtonClick: func,
-  scorer: oneOfType([number, string]),
-  seconds: number,
-  showCentrePanel: bool,
-  showSeconds: bool,
-  title: string
+  cutOffPositions: arrayOf(number),
+  dangerZonePositions: arrayOf(number),
+  groupName: string,
+  qualificationPositions: arrayOf(number),
+  pointsForWin: number,
+  teams: arrayOf(
+    shape({
+      gamesDrawn: number.isRequired,
+      gamesLost: number.isRequired,
+      gamesPlayed: number,
+      gamesWon: number.isRequired,
+      goalDifference: number,
+      goalsConceded: number.isRequired,
+      goalsScored: number.isRequired,
+      points: number,
+      teamName: string.isRequired
+    })
+  )
 }

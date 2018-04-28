@@ -8,5 +8,11 @@
   src: url('../fonts/Quicksand-Regular.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'DetailBold';
+  src: url('../fonts/Quicksand-Bold.ttf') format('truetype');
+}
+
 $detail-font: "Detail", sans-serif;
-$detail-light-font: "DetailLight", sans-serif;
+$detail-font-bold: "DetailBold", sans-serif;
+$detail-font-light: "DetailLight", sans-serif;
