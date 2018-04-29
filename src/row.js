@@ -51,8 +51,8 @@ export default class Row extends Component {
         <td>{this.props.gamesDrawn}</td>
         <td>{this.props.gamesLost}</td>
         <td>{this.getGoalDifference()}</td>
-        <td>{this.props.goalsScored}</td>
-        <td>{this.props.goalsConceded}</td>
+        {this.props.showGoalsScored && <td>{this.props.goalsScored}</td>}
+        {this.props.showGoalsConceded && <td>{this.props.goalsConceded}</td>}
         <td className='th-em'>{this.getPoints()}</td>
       </tr>
     )

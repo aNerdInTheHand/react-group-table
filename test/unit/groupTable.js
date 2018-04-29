@@ -1,15 +1,23 @@
 import GroupTable from '../../src/groupTable'
 import teams from '../tools/redux/group/initialState'
+const FALSE = false
 
 const shallowNoGroup = shallow(<GroupTable teams={teams.teams} />)
 const shallowGroup = shallow(<GroupTable teams={teams.teams} groupName='Group H' />)
-const hideOptional = shallow(<GroupTable teams={teams.teams} />)
+const shallowGroupMin = shallow(<GroupTable
+  teams={teams.teams}
+  showGoalsConceded={FALSE}
+  showGoalsScored={FALSE}
+  showPositions={FALSE}
+/>)
 
 const tableWrapper = shallowNoGroup.find('.table-wrapper')
 const groupTable = shallowNoGroup.find('.group-table')
 const headerRow = shallowNoGroup.find('.group-table-header-row')
 const noGroupName = shallowNoGroup.find('.group-table-group-name')
 const groupName = shallowGroup.find('.group-table-group-name')
+const maxHeaders = shallowGroup.find('.group-table-header-row th')
+const minHeaders = shallowGroupMin.find('.group-table-header-row th')
 
 describe('<GroupTable />', () => {
   it('should have a Wrapper', () => {
@@ -32,16 +40,11 @@ describe('<GroupTable />', () => {
   })
 
   describe('Optional columns', () => {
-    it('test button should be type <button>', () => {
-      assert.equal(headerRow.type().displayName, 'styled.button')
+    it('Should have all the columns', () => {
+      assert.equal(maxHeaders.length, 10)
     })
-    it('test button should say "Click Me!"', () => {
-      assert.equal(headerRow.props().children, 'Click Me!')
-    })
-    it('test button on click should call onButtonClick function', () => {
-      const onClickSpy = sinon.spy()
-      shallow(<GroupTable onButtonClick={onClickSpy} />).find('#shallowNoGroup-button').simulate('click')
-      assert.isTrue(onClickSpy.calledOnce)
+    it('Should only display non-optional columns', () => {
+      assert.equal(minHeaders.length, 7)
     })
   })
 })
