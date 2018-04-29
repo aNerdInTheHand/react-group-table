@@ -37,5 +37,5 @@ export default {
       points: number,
       teamName: string.isRequired
     })
-  )
+  ).isRequired
 }
