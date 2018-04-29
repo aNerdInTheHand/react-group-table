@@ -52,3 +52,15 @@ The most important prop is an array of team objects. There can be as many teams 
 
 ### With only mandatory columns shown, no group name, default qualification and danger zone positions
 ![Short table](./screenshots/min.png)
+
+## Test Harness
+If you want to fork this repo and make changes or just clone it to play about with, it also comes with a 'Reduxified' test harness. Run
+```
+npm start
+```
+to serve the component - access it at
+```
+localhost:8080
+```
+in your browser. Hot reloading is enabled so you can make changes on the fly.
+Although not used for this simple example (other than the initial state), there is a redux directory with an example reducer (`test/tools/redux/group/increment.js`). If you are familiar with Redux and wish to make use of this in development then you can simply add new actions (to `test/tools/redux/group/actions.js`) and new reducers. The component is rendered in `test/tools/containers/Harness.js` and `test/tools/components/Harness.js`.
