@@ -12,6 +12,14 @@
     "unit-tests:watch": "npm run unit-tests -- --watch",
     "stylelint": "stylelint \"src/sass/**/*.scss\""
   },
+  "standard": {
+    "ignore": [
+      "/test/unit/",
+      "/node_modules/",
+      "/build/",
+      "mocha.compiler.js"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aNerdInTheHand/react-group-table.git"

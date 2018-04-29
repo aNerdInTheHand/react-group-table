@@ -1,5 +1,6 @@
 import {
   arrayOf,
+  bool,
   number,
   shape,
   string
@@ -9,7 +10,10 @@ export const defaultProps = {
   cutOffPositions: [2],
   dangerZonePositions: [3, 4],
   pointsForWin: 3,
-  qualificationPositions: [1, 2]
+  qualificationPositions: [1, 2],
+  showGoalsConceded: true,
+  showGoalsScored: true,
+  showPositions: true
 }
 
 export default {
@@ -18,6 +22,9 @@ export default {
   groupName: string,
   qualificationPositions: arrayOf(number),
   pointsForWin: number,
+  showGoalsConceded: bool,
+  showGoalsScored: bool,
+  showPositions: bool,
   teams: arrayOf(
     shape({
       gamesDrawn: number.isRequired,
@@ -30,5 +37,5 @@ export default {
       points: number,
       teamName: string.isRequired
     })
-  )
+  ).isRequired
 }

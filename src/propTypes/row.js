@@ -9,11 +9,14 @@ export const defaultProps = {
   gamesLost: 0,
   gamesWon: 0,
   pointsForWin: 3,
+  showGoalsConceded: true,
+  showGoalsScored: true,
   showPositions: true
 }
 
 export default {
   cutOffPosition: bool,
+  dangerZone: bool,
   gamesDrawn: number.isRequired,
   gamesLost: number.isRequired,
   gamesPlayed: number,
@@ -24,7 +27,8 @@ export default {
   points: number,
   pointsForWin: number,
   qualificationPosition: bool,
-  dangerZone: bool,
+  showGoalsConceded: bool,
+  showGoalsScored: bool,
   showPositions: bool,
   teamName: string.isRequired,
   teamPosition: number

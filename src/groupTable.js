@@ -30,6 +30,9 @@ export default class GroupTable extends Component {
         goalsScored={team.goalsScored}
         points={team.points}
         qualificationPosition={this.isTeamInQualPosition(i + 1)}
+        showGoalsConceded={this.props.showGoalsConceded}
+        showGoalsScored={this.props.showGoalsScored}
+        showPositions={this.props.showPositions}
         teamName={team.teamName}
         teamPosition={i + 1}
       />
@@ -42,15 +45,15 @@ export default class GroupTable extends Component {
         <table className='group-table'>
           <thead>
             <tr className='group-table-header-row'>
-              <th className='empty-th' />
+              {this.props.showPositions && <th className='empty-th' />}
               <th className='group-table-group-name'>{this.props.groupName}</th>
               <th>P</th>
               <th>W</th>
               <th>D</th>
               <th>L</th>
               <th>GD</th>
-              <th>GS</th>
-              <th>GC</th>
+              {this.props.showGoalsScored && <th>GS</th>}
+              {this.props.showGoalsConceded && <th>GC</th>}
               <th className='th-em'>PTS</th>
             </tr>
           </thead>

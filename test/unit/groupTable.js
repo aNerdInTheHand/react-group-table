@@ -1,42 +1,50 @@
-import Template from '../../src/scoreboard'
+import GroupTable from '../../src/groupTable'
+import teams from '../tools/redux/group/initialState'
+const FALSE = false
 
-const template = shallow(<Template />)
+const shallowNoGroup = shallow(<GroupTable teams={teams.teams} />)
+const shallowGroup = shallow(<GroupTable teams={teams.teams} groupName='Group H' />)
+const shallowGroupMin = shallow(<GroupTable
+  teams={teams.teams}
+  showGoalsConceded={FALSE}
+  showGoalsScored={FALSE}
+  showPositions={FALSE}
+/>)
 
-const testWrapper = template.find('#template-wrapper')
-const testHeader = template.find('#template-title')
-const testButton = template.find('#template-button')
+const tableWrapper = shallowNoGroup.find('.table-wrapper')
+const groupTable = shallowNoGroup.find('.group-table')
+const headerRow = shallowNoGroup.find('.group-table-header-row')
+const noGroupName = shallowNoGroup.find('.group-table-group-name')
+const groupName = shallowGroup.find('.group-table-group-name')
+const maxHeaders = shallowGroup.find('.group-table-header-row th')
+const minHeaders = shallowGroupMin.find('.group-table-header-row th')
 
-describe('<Template />', () => {
+describe('<GroupTable />', () => {
   it('should have a Wrapper', () => {
-    assert.equal(testWrapper.exists(), true)
+    assert.equal(tableWrapper.exists(), true)
   })
   it('should have a test header', () => {
-    assert.equal(testHeader.exists(), true)
+    assert.equal(groupTable.exists(), true)
   })
   it('should have a test button', () => {
-    assert.equal(testButton.exists(), true)
+    assert.equal(headerRow.exists(), true)
   })
 
-  describe('Test Header', () => {
-    it('test header should be type <h1>', () => {
-      assert.equal(testHeader.type().displayName, 'styled.h1')
+  describe('Group Name', () => {
+    it('Group name should not be displayed', () => {
+      assert.equal(noGroupName.text(), '')
     })
-    it('test header should say "Hello World!"', () => {
-      assert.equal(testHeader.props().children, 'Hello World!')
+    it('Group name should be Group H', () => {
+      assert.equal(groupName.text(), 'Group H')
     })
   })
 
-  describe('Test Button', () => {
-    it('test button should be type <button>', () => {
-      assert.equal(testButton.type().displayName, 'styled.button')
+  describe('Optional columns', () => {
+    it('Should have all the columns', () => {
+      assert.equal(maxHeaders.length, 10)
     })
-    it('test button should say "Click Me!"', () => {
-      assert.equal(testButton.props().children, 'Click Me!')
-    })
-    it('test button on click should call onButtonClick function', () => {
-      const onClickSpy = sinon.spy()
-      shallow(<Template onButtonClick={onClickSpy} />).find('#template-button').simulate('click')
-      assert.isTrue(onClickSpy.calledOnce)
+    it('Should only display non-optional columns', () => {
+      assert.equal(minHeaders.length, 7)
     })
   })
 })
