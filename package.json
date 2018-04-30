@@ -2,9 +2,23 @@
   "name": "react-group-table",
   "version": "1.0.0",
   "description": "A react component for displaying football group tables",
-  "main": "index.js",
+  "main": "src/groupTable.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run unit-tests && webpack --config webpack.config.js",
+    "start": "webpack-dev-server --hot --config webpack.config.js --inline --content-base build/",
+    "test": "npm run linters && npm run unit-tests",
+    "unit-tests": "mocha --compilers js:./mocha.compiler.js test/unit --require ./test/unit/helpers.js --require ./test/unit/dom.js --recursive",
+    "linters": "npm run stylelint && standard",
+    "unit-tests:watch": "npm run unit-tests -- --watch",
+    "stylelint": "stylelint \"src/sass/**/*.scss\""
+  },
+  "standard": {
+    "ignore": [
+      "/test/unit/",
+      "/node_modules/",
+      "/build/",
+      "mocha.compiler.js"
+    ]
   },
   "repository": {
     "type": "git",
@@ -19,6 +33,41 @@
   ],
   "author": "Nick Holvast",
   "license": "ISC",
+  "dependencies": {
+    "prop-types": "^15.6.0",
+    "react": "^15.6.2"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "chai-enzyme": "^0.8.0",
+    "css-loader": "^0.28.7",
+    "enzyme": "^2.9.1",
+    "file-loader": "^0.11.2",
+    "jsdom": "^11.2.0",
+    "mocha": "^3.5.3",
+    "node-sass": "^4.5.3",
+    "react-dom": "^15.6.2",
+    "react-redux": "^5.0.6",
+    "react-test-renderer": "^16.0.0",
+    "redux": "^3.7.2",
+    "sass-loader": "^6.0.6",
+    "sinon": "^4.0.0",
+    "standard": "^10.0.3",
+    "standard-loader": "^6.0.1",
+    "style-loader": "^0.18.2",
+    "stylelint": "^8.1.1",
+    "stylelint-order": "^0.7.0",
+    "stylelint-scss": "^2.1.0",
+    "stylelint-webpack-plugin": "^0.9.0",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2"
+  },
   "bugs": {
     "url": "https://github.com/aNerdInTheHand/react-group-table/issues"
   },

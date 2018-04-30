@@ -1,0 +1,52 @@
+@import './fonts';
+
+.table-wrapper {
+  background: white;
+  display: inline-block;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+
+.group-table {
+  align-items: center;
+  background-color: #f3f3f3;
+  border: 1px solid black;
+  border-radius: 3px;
+  font-family: $detail-font-light, sans-serif;
+  margin: 1rem;
+  max-width: 750px;
+  padding: 1.5rem;
+}
+
+th, td {
+  max-width: 100px;
+  min-width: 20px;
+  padding: 0.5rem;
+  text-align: right;
+}
+
+th {
+  border-bottom: 2px solid #a0a0a0;
+}
+
+tr {
+  border: 1px solid #c0c0c0;
+}
+
+.td-em, .th-em {
+  font-family: $detail-font-bold;
+}
+
+.group-table-team-name, .group-table-group-name {
+  text-align: left;
+}
+
+.group-table-header-row {
+  background-color: #ffeeee;
+}
+
+table {
+  border-collapse: collapse;
+}

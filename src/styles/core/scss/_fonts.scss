@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Detail';
+  src: url('../fonts/Quicksand-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DetailLight';
+  src: url('../fonts/Quicksand-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DetailBold';
+  src: url('../fonts/Quicksand-Bold.ttf') format('truetype');
+}
+
+$detail-font: "Detail", sans-serif;
+$detail-font-bold: "DetailBold", sans-serif;
+$detail-font-light: "DetailLight", sans-serif;
