@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import propTypes, { defaultProps } from './propTypes/groupTable'
 import Row from './row'
-
+import './styles/core.scss'
 export default class GroupTable extends Component {
   isTeamInCutoffPosition (position) {
     return this.props.cutOffPositions.includes(position)
