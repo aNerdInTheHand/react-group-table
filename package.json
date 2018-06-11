@@ -1,6 +1,6 @@
 {
   "name": "react-group-table",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A react component for displaying football group tables",
   "main": "src/groupTable.js",
   "scripts": {
@@ -49,7 +49,7 @@
     "enzyme": "^2.9.1",
     "file-loader": "^0.11.2",
     "jsdom": "^11.2.0",
-    "mocha": "^3.5.3",
+    "mocha": "^5.2.0",
     "node-sass": "^4.5.3",
     "react-dom": "^15.6.2",
     "react-redux": "^5.0.6",
@@ -64,9 +64,9 @@
     "stylelint-order": "^0.7.0",
     "stylelint-scss": "^2.1.0",
     "stylelint-webpack-plugin": "^0.9.0",
-    "url-loader": "^0.5.9",
+    "url-loader": "^1.0.1",
     "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.8.2"
+    "webpack-dev-server": "^3.1.4"
   },
   "bugs": {
     "url": "https://github.com/aNerdInTheHand/react-group-table/issues"
